@@ -225,30 +225,10 @@ class DataLoaderLite:
 
         return x, y
 
-# Example usage:
-
-def get_most_likely_row(tokens, mask, logits):
-    # evaluate the autoregressive loss at all positions
-    shift_logits = (logits[..., :-1, :]).contiguous()
-    shift_tokens = (tokens[..., 1:]).contiguous()
-    flat_shift_logits = shift_logits.view(-1, shift_logits.size(-1))
-    flat_shift_tokens = shift_tokens.view(-1)
-    shift_losses = F.cross_entropy(flat_shift_logits, flat_shift_tokens, reduction='none')
-    shift_losses = shift_losses.view(tokens.size(0), -1)
-    # now get the average loss just for the completion region (where mask == 1), in each row
-    shift_mask = (mask[..., 1:]).contiguous() # we must shift mask, so we start at the last prompt token
-    masked_shift_losses = shift_losses * shift_mask
-    # sum and divide by the number of 1s in the mask
-    sum_loss = masked_shift_losses.sum(dim=1)
-    avg_loss = sum_loss / shift_mask.sum(dim=1)
-    # now we have a loss for each of the 4 completions
-    # the one with the lowest loss should be the most likely
-    pred_norm = avg_loss.argmin().item()
-    return pred_norm
 
 
 
-torch.manual_seed(1337)
+
 if torch.cuda.is_available():
     torch.cuda.manual_seed(1337)
 enc = tiktoken.get_encoding("gpt2")
@@ -274,7 +254,7 @@ torch.set_float32_matmul_precision('high')
 # get the logits
 model = GPT(GPTConfig())
 model.to(device)  # Move model to GPU only if available
-# model = torch.compile(model)
+model = torch.compile(model)  
 
 
 
@@ -336,7 +316,6 @@ for step in range(max_steps):
                 loss = loss / val_loss_steps
                 val_loss_accum += loss.detach()
 
-
         print(f"validation loss: {val_loss_accum.item():.4f}")
         with open(log_file, "a") as f:
             f.write(f"{step} val {val_loss_accum.item():.4f}\n")
@@ -389,12 +368,6 @@ for step in range(max_steps):
             decoded = enc.decode(tokens)
             print(f"sample {i}: {decoded}")
 
-
-
-
-
-
-
     model.train()
     optimizer.zero_grad()
     loss_accum = 0.0
@@ -424,8 +397,6 @@ for step in range(max_steps):
     tokens_processed = train_loader.B * train_loader.T * grad_accum_steps
     tokens_per_sec = tokens_processed / (dt/1000)
     print(f"step:{step} | loss: {loss_accum.item()} | lr {lr:.4e} | norm: {norm:.4f} | time: {dt:.2f}ms | tok/sec: {tokens_per_sec:.2f}")
-
-
 
 
 #  evaluate the model
