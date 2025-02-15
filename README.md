@@ -17,6 +17,7 @@ This repository contains the code and resources for training and generating sequ
 1️⃣ Clone the Repository  
 
 git clone https://github.com/FRIDAYFRINGE/LyricGenAI.git
+
 cd LyricGenAI
 
 2️⃣ Download the Trained Model
