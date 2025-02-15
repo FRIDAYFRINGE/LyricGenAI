@@ -69,7 +69,7 @@ If needed, here’s how to manually load the model in Python:
 
 📌 Dataset
 The dataset used for training can be found here:
-📂 Dataset Link [https://www.kaggle.com/datasets/vatsalmavani/spotify-dataset]
+📂 [Dataset Link] (https://www.kaggle.com/datasets/vatsalmavani/spotify-dataset)
 
 📜 License
 This project is licensed under the MIT License - see the LICENSE file for details.
