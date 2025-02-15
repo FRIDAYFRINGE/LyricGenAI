@@ -16,9 +16,8 @@ This repository contains the code and resources for training and generating sequ
 
 1️⃣ Clone the Repository  
 
-git clone https://github.com/FRIDAYFRINGE/LyricGenAI.git
-
-cd LyricGenAI
+    git clone https://github.com/FRIDAYFRINGE/LyricGenAI.git
+    cd LyricGenAI
 
 2️⃣ Download the Trained Model
 Since GitHub has file size limits, download the model (model.pth) from Google Drive: 📥 [Download model.pth](https://drive.google.com/file/d/1l4HZ25afdMJjEhqAaBuvYEs3KwK73NO-/view?usp=drive_link)
@@ -26,16 +25,19 @@ Since GitHub has file size limits, download the model (model.pth) from Google Dr
     After downloading, place model.pth in the same directory as play.ipynb.
 
 3️⃣ Install Dependencies
-pip install -r requirements.txt
+
+    !pip install -r requirements.txt
 
 4️⃣ Train the Model (Optional)
 To train the model from scratch, run:
-python model.py
+
+    python model.py
 
 
 5️⃣ Run Inference
 Open the Jupyter Notebook:
-jupyter notebook play.ipynb
+    
+    jupyter notebook play.ipynb
 
 
 
@@ -51,16 +53,17 @@ Max Sequence Length: 1024
 
 🔧 Example: Loading the Model
 If needed, here’s how to manually load the model in Python:
-import torch
-from model import GPT, GPTConfig  # Import the correct model class
-
-# Load Model Configuration
-config = GPTConfig()  # Ensure config matches the trained model parameters
-model = GPT(config)
-
-# Load Weights
-model.load_state_dict(torch.load("model.pth", map_location=torch.device('cpu')))
-model.eval()
+    
+    import torch
+    from model import GPT, GPTConfig  # Import the correct model class
+    
+    # Load Model Configuration
+    config = GPTConfig()  # Ensure config matches the trained model parameters
+    model = GPT(config)
+    
+    # Load Weights
+    model.load_state_dict(torch.load("model.pth", map_location=torch.device('cpu')))
+    model.eval()
 
 
 
