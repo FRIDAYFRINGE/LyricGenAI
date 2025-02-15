@@ -21,9 +21,7 @@ git clone https://github.com/FRIDAYFRINGE/LyricGenAI.git
 cd LyricGenAI
 
 2️⃣ Download the Trained Model
-Since GitHub has file size limits, download the model (model.pth) from Google Drive:
-
-📥 [Download model.pth](https://drive.google.com/file/d/1l4HZ25afdMJjEhqAaBuvYEs3KwK73NO-/view?usp=drive_link)
+Since GitHub has file size limits, download the model (model.pth) from Google Drive: 📥 [Download model.pth](https://drive.google.com/file/d/1l4HZ25afdMJjEhqAaBuvYEs3KwK73NO-/view?usp=drive_link)
 
 After downloading, place model.pth in the same directory as play.ipynb.
 
