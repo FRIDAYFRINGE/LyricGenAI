@@ -1,0 +1,16 @@
+# Model Checkpoint
+
+The trained model checkpoint is too large to upload directly to GitHub.  
+You can download the `.pth` file from Google Drive using the link below:
+
+📥 **[Download model.pth](https://drive.google.com/file/d/1l4HZ25afdMJjEhqAaBuvYEs3KwK73NO-/view?usp=drive_link)**
+
+To use it, place the `model.pth` file in the appropriate directory and load it with:
+
+```python
+import torch
+from your_model import YourModel  # Replace with actual model class
+
+model = YourModel()
+model.load_state_dict(torch.load("model.pth"))
+model.eval()
