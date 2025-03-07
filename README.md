@@ -4,6 +4,12 @@ This repository contains the code and resources for training and generating sequ
 
 ---
 
+## model architecture 
+
+![{A9212516-5CBE-4370-9A46-36A66691C7FA}](https://github.com/user-attachments/assets/7e4b343b-39c4-4248-980f-3320a94f5dcd)
+
+
+
 ## 📂 Repository Structure  
 - **`model.py`** → Code for training the model.  
 - **`dataset`** → Contains the dataset link used for training.  
