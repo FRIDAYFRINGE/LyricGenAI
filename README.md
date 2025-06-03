@@ -57,7 +57,7 @@ Max Sequence Length: 1024
 
 
 
-🔧 Example: Loading the Model:
+🔧 Example: Loading the Model-
     
     import torch
     from model import GPT, GPTConfig  # Import the correct model class
