@@ -34,7 +34,7 @@ Since GitHub has file size limits, download the model (model.pth) from Google Dr
 
     !pip install -r requirements.txt
 
-4️⃣ Train the Model (Optional)
+4️⃣ Train the Model
 To train the model from scratch, run:
 
     python model.py
