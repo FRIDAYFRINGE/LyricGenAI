@@ -57,8 +57,7 @@ Max Sequence Length: 1024
 
 
 
-🔧 Example: Loading the Model
-If needed, here’s how to manually load the model in Python:
+🔧 Example: Loading the Model:
     
     import torch
     from model import GPT, GPTConfig  # Import the correct model class
@@ -82,13 +81,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 🔥 Now you're ready to train and generate sequences! 🚀
 
-
-
-This README gives clear instructions on:  
-✅ Repo structure  
-✅ Downloading the model  
-✅ Training and running inference  
-✅ Dataset link  
 
 
 
