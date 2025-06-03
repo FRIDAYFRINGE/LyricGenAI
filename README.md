@@ -58,12 +58,9 @@ Max Sequence Length: 1024
 
 
 🔧 Example: Loading the Model-
-    
-    import torch
-    from model import GPT, GPTConfig  # Import the correct model class
-    
+      
     # Load Model Configuration
-    config = GPTConfig()  # Ensure config matches the trained model parameters
+    config = GPTConfig()  
     model = GPT(config)
     
     # Load Weights
