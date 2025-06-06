@@ -13,7 +13,7 @@ This repository contains the code and resources for training and generating sequ
 ## 📂 Repository Structure  
 - **`model.py`** → Code for training the model.  
 - **`dataset`** → Contains the dataset link used for training.  
-- **`model_paras`** → Google Drive link to the trained model (`model.pth`).  
+- **`model_paras`** → 🤗 link to the trained model (`model.pth`).  
 - **`play.ipynb`** → Jupyter Notebook to load the trained model and generate sequences.  
 
 ---
