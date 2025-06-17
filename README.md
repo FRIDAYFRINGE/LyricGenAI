@@ -71,8 +71,5 @@ The dataset used for training can be found here:
 📜 License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-
-
-
-
-
+🙏 Acknowledgements
+This project is built on the work of [@karpathy](https://github.com/karpathy), whose clear and elegant implementation of the GPT architecture in NanoGPT serves as the foundation for the models used here.
