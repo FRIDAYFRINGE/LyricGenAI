@@ -15,7 +15,6 @@ This repository contains the code and resources for training and generating sequ
 - **`dataset`** → Contains the dataset link used for training.  
 - **`model_paras`** → 🤗 link to the trained model (`model.pth`).  
 - **`play.ipynb`** → Jupyter Notebook to load the trained model and generate sequences.  
-
 ---
 
 ## 🚀 Getting Started  
@@ -59,12 +58,8 @@ Max Sequence Length: 1024
 
 🔧 Example: Loading the Model-
       
-    # Load Model Configuration
-    config = GPTConfig()  
-    model = GPT(config)
-    
     # Load Weights
-    model.load_state_dict(torch.load("model.pth", map_location=torch.device('cpu')))
+    model.load_state_dict(torch.load("model.pth", map_location=torch.device('gpu')))
     model.eval()
 
 
@@ -75,8 +70,6 @@ The dataset used for training can be found here:
 
 📜 License
 This project is licensed under the MIT License - see the LICENSE file for details.
-
-🔥 Now you're ready to train and generate sequences! 🚀
 
 
 
